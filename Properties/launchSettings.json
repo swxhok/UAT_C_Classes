@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "UAT_C_First_Class": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
