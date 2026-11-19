@@ -15,8 +15,8 @@ public static class UAT_5th_Class
         Console.WriteLine("Hello");
         Console.Write("Enter your name: ");
 
-        // Console.ReadLine() always reads user input in as a string
-        string name = Console.ReadLine();
+        // Console.ReadLine() returns null if the input stream ends.
+        string? name = Console.ReadLine();
 
         Console.WriteLine("Your name is: " + name + "\n");
 
@@ -29,7 +29,13 @@ public static class UAT_5th_Class
         Console.WriteLine("--- 2. Parsing Strings to Numbers (int.Parse) ---");
         Console.Write("Enter your age: ");
 
-        string ageString = Console.ReadLine();
+        string? ageString = Console.ReadLine();
+        if (ageString is null)
+        {
+            Console.WriteLine("Input ended before an age was entered.");
+            return;
+        }
+
         int age = int.Parse(ageString); // Converts the string e.g. "55" into the integer 55
 
         Console.WriteLine("Your age is: " + age);
@@ -62,7 +68,12 @@ public static class UAT_5th_Class
         Console.WriteLine("What happens when you enter text (like 'Dan') when a number is expected?");
         Console.Write("Try entering a number (or type 'Dan' to see a FormatException): ");
 
-        string testInput = Console.ReadLine();
+        string? testInput = Console.ReadLine();
+        if (testInput is null)
+        {
+            Console.WriteLine("Input ended before a number was entered.");
+            return;
+        }
 
         try
         {
