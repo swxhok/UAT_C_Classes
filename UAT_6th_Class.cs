@@ -55,12 +55,14 @@ public static class UAT_6th_Class
 
         // Assign an Address object to an existing customer
         customer1.Address = new Address("42A", "High Street", "Skipton", "North Yorkshire", "BD23 1JX");
+        customer2.Address = new Address("7", "Station Road", "Harrogate", "North Yorkshire", "HG1 2AB");
 
         // Or pass an Address object directly into the overloaded Customer constructor
         Address aliceAddress = new("10", "Oak Avenue", "Leeds", "West Yorkshire", "LS1 4AP");
         Customer customer3 = new Customer("Alice", "Walker", 29, aliceAddress);
 
         Console.WriteLine($"{customer1.GetFullName()}'s Address: {customer1.Address.FormattedAddress}");
+        Console.WriteLine($"{customer2.GetFullName()}'s Address: {customer2.Address.FormattedAddress}");
         Console.WriteLine($"{customer3.GetFullName()}'s Address: {customer3.Address?.FormattedAddress}\n");
 
 
