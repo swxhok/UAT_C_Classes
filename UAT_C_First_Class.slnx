@@ -2,6 +2,7 @@
   <Project Path="UAT_4th_Class/UAT_4th_Class.csproj" />
   <Project Path="UAT_5th_Class/UAT_5th_Class.csproj" />
   <Project Path="UAT_6th_Class/UAT_6th_Class.csproj" />
+  <Project Path="UAT_7th_Class/UAT_7th_Class.csproj" />
   <Project Path="UAT_ForEach_Class/UAT_ForEach_Class.csproj" />
   <Project Path="UAT_C_First_Class.csproj" />
 </Solution>
