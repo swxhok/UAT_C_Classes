@@ -22,8 +22,6 @@
     <Compile Remove="UAT_5th_Class\**" />
     <Compile Remove="UAT_6th_Class.cs" />
     <Compile Remove="UAT_6th_Class\**" />
-    <Compile Remove="UAT_7th_Class.cs" />
-    <Compile Remove="UAT_7th_Class\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +29,6 @@
     <None Include="UAT_ForEach_Class\UAT_ForEach_Class.csproj" />
     <None Include="UAT_5th_Class\UAT_5th_Class.csproj" />
     <None Include="UAT_6th_Class\UAT_6th_Class.csproj" />
-    <None Include="UAT_7th_Class\UAT_7th_Class.csproj" />
   </ItemGroup>
 
 </Project>
