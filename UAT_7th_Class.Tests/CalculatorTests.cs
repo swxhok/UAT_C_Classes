@@ -6,6 +6,22 @@ namespace UAT_7th_Class.Tests;
 [TestClass]
 public class CalculatorTests
 {
+    private Calculator _calculator = null!;
+
+    // Runs BEFORE each [TestMethod] (and each [DataRow] run)
+    [TestInitialize]
+    public void TestInitialize()
+    {
+        _calculator = new Calculator(0, 0);
+    }
+
+    // Runs AFTER each [TestMethod] (and each [DataRow] run)
+    [TestCleanup]
+    public void TestCleanup()
+    {
+        _calculator = null!;
+    }
+
     // ==========================================
     // 2. ADD TESTS (Data-Driven)
     // ==========================================
@@ -19,10 +35,11 @@ public class CalculatorTests
     public void Add_GivenTwoNumbers_ReturnsSum(double a, double b, double expected)
     {
         // Arrange
-        Calculator calculator = new Calculator(a, b);
+        _calculator.Number1 = a;
+        _calculator.Number2 = b;
 
         // Act
-        double result = calculator.Add();
+        double result = _calculator.Add();
 
         // Assert
         Assert.AreEqual(expected, result, 1e-9);
@@ -41,10 +58,11 @@ public class CalculatorTests
     public void Minus_GivenTwoNumbers_ReturnsDifference(double a, double b, double expected)
     {
         // Arrange
-        Calculator calculator = new Calculator(a, b);
+        _calculator.Number1 = a;
+        _calculator.Number2 = b;
 
         // Act
-        double result = calculator.Minus();
+        double result = _calculator.Minus();
 
         // Assert
         Assert.AreEqual(expected, result, 1e-9);
@@ -63,10 +81,11 @@ public class CalculatorTests
     public void Multiply_GivenTwoNumbers_ReturnsProduct(double a, double b, double expected)
     {
         // Arrange
-        Calculator calculator = new Calculator(a, b);
+        _calculator.Number1 = a;
+        _calculator.Number2 = b;
 
         // Act
-        double result = calculator.Multiply();
+        double result = _calculator.Multiply();
 
         // Assert
         Assert.AreEqual(expected, result, 1e-9);
@@ -85,10 +104,11 @@ public class CalculatorTests
     public void Divide_GivenValidNumbers_ReturnsQuotient(double a, double b, double expected)
     {
         // Arrange
-        Calculator calculator = new Calculator(a, b);
+        _calculator.Number1 = a;
+        _calculator.Number2 = b;
 
         // Act
-        double result = calculator.Divide();
+        double result = _calculator.Divide();
 
         // Assert
         Assert.AreEqual(expected, result, 1e-9);
@@ -99,10 +119,11 @@ public class CalculatorTests
     public void Divide_ByZero_ThrowsDivideByZeroException()
     {
         // Arrange
-        Calculator calculator = new Calculator(10, 0);
+        _calculator.Number1 = 10;
+        _calculator.Number2 = 0;
 
         // Act & Assert
-        Assert.ThrowsExactly<DivideByZeroException>(() => calculator.Divide());
+        Assert.ThrowsExactly<DivideByZeroException>(() => _calculator.Divide());
     }
 
     // ==========================================
@@ -119,10 +140,11 @@ public class CalculatorTests
     public void Power_GivenBaseAndExponent_ReturnsResult(double a, double b, double expected)
     {
         // Arrange
-        Calculator calculator = new Calculator(a, b);
+        _calculator.Number1 = a;
+        _calculator.Number2 = b;
 
         // Act
-        double result = calculator.Power();
+        double result = _calculator.Power();
 
         // Assert
         Assert.AreEqual(expected, result, 1e-9);
